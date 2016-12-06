@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RenderMyFrame;assembly=RenderMyFrame"
+             x:Class="RenderMyFrame.Page1">
+ <ContentPage.Content>
+   <Grid>
+     <Grid.RowDefinitions>
+       <RowDefinition Height="auto"> </RowDefinition>
+      <RowDefinition Height="auto"> </RowDefinition>
+      <RowDefinition Height="auto"> </RowDefinition>
+     </Grid.RowDefinitions>
+     
+     <local:ExtendedFrame BindingContext="{x:Reference myFrame}" Grid.Row="0"  BackgroundColor="{Binding BackgroundColor}" HorizontalOptions="FillAndExpand" OutlineColor="{Binding BackgroundColor}" Padding="0,0,0,0" >    
+      <Button Text="hello1"></Button>
+     </local:ExtendedFrame>
+
+     <Frame  Grid.Row="1" x:Name="myFrame"  BackgroundColor="Green" HorizontalOptions="FillAndExpand" OutlineColor="Red" Padding="0,0,0,0">
+       <Button Text="hello2"></Button>
+     </Frame>
+
+     <Button Text="hello3" Grid.Row="2"></Button>
+  </Grid>  
+
+ </ContentPage.Content>
+</ContentPage>
